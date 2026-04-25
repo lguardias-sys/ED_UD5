@@ -1,0 +1,46 @@
+@startuml
+    class ICazador {
+        <<interface>>
+        +acechar(presa: String) void
+        +atacar() void
+    }
+
+    class Animal {
+        -nombre: String
+        -edad: int
+        -especie: String
+        +Animal(nombre: String, edad: int, especie: String)
+        +hacerSonido()* void
+        +comer() void
+        +getDetalles() String
+    }
+
+    class Leon {
+        -tieneMena: boolean
+        +Leon(nombre: String, edad: int, tieneMena: boolean)
+        +hacerSonido() void
+        +rugir() void
+    }
+
+    class Pinguino {
+        -velocidadNado: float
+        +Pinguino(nombre: String, edad: int, velocidadNado: float)
+        +hacerSonido() void
+        +nadar() void
+    }
+
+    class Cuidador {
+        -idEmpleado: int
+        +Cuidador(nombre: String, id: int)
+        +alimentarAnimal(animal: Animal) void
+        +revisarSalud(animal: Animal) boolean
+    }
+
+    Animal <|-- Leon : Hereda de
+    Animal <|-- Pinguino : Hereda de
+
+    ICazador <|.. Leon : Implementa
+
+    Cuidador --> Animal : Cuida/Interactúa con
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+class Cat {
++ String playful
++ String breed
++ String toString()
+}
+
+
+interface Pet {
++ {static} String playful
+}
+
+class Fish {
++ String playful
++ int swimspeed
++ String toString()
+}
+
+
+class Zoo {
++ String Name
++ String City
++ int Capacity
++ List<Animal> Animals
++ <<Create>> Zoo(String,String,int)
++ void addAnimal(Animal)
++ void removeAnimal()
++ void printMembers()
+}
+
+
+class Animal {
++ String Name
++ int Age
++ boolean female
+}
+
+
+
+Pet <|.. Cat
+Animal <|-- Cat
+Animal <|-- Fish
+@enduml
