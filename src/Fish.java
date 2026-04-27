@@ -1,4 +1,4 @@
-public class Fish extends Animal{
+public class Fish extends Animal implements Pet{
     public String playful;
     public int swimspeed;
 
