@@ -35,9 +35,8 @@ class Animal {
 + boolean female
 }
 
-
-
 Pet <|.. Cat
 Animal <|-- Cat
 Animal <|-- Fish
+Zoo o-- Animal
 @enduml
